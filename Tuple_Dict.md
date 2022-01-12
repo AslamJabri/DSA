@@ -32,3 +32,63 @@ Python also supports dictionary comprehensions, which work very similar to list 
 However, to iterate the dictionary, we’ll use the dict.items() operation which turns a dictionary into a list of (key, value) tuples.
 
 Here’s a simple example where the keys of the original dictionary are squared and '!' is appended to each string value:
+
+
+# SETS
+
+A set is an unordered collection of data items.
+Mutable data structures like lists or dictionaries can’t be added to a set. However, adding a tuple is perfectly fine.
+One might wonder, “Why would I need a set?”
+Well, a set is perfect when we simply need to keep track of the existence of items.
+It doesn’t allow duplicates, which means that we can convert another data structure to a set to remove any duplicates.
+
+# Creating  a SET
+The content of a set are encapsulated in curly braces {}. 
+A set() constructor is used for creating a set alternately.
+
+# SET theory operation
+In Python, union can be performed using either the pipe operator, |, or the union() method:
+    set_A = {1, 2, 3, 4}
+    set_B = {'a', 'b', 'c', 'd'}
+
+    print(set_A | set_B)
+    print(set_A.union(set_B))
+    print(set_B.union(set_A))
+
+    Output:
+    {1, 2, 3, 4, 'd', 'b', 'c', 'a'}
+    {1, 2, 3, 4, 'd', 'b', 'c', 'a'}
+    {1, 2, 3, 4, 'd', 'b', 'c', 'a'}
+
+In Python, intersection can be performed using either the & operator or the intersection() method:
+
+    set_A = {1, 2, 3, 4}
+    set_B = {2, 8, 4, 16}
+
+    print(set_A & set_B)
+    print(set_A.intersection(set_B))
+    print(set_B.intersection(set_A))
+
+    Output:
+    {2, 4}
+    {2, 4}
+    {2, 4}
+
+# Difference
+In Python, the difference between two sets can be found using either the - operator or the difference() method.
+Do keep in mind that the difference operation is not associative, i.e., the positions of the sets matter.
+set_A - set_B returns the elements which are only present in set_A.
+set_B - set_A would do the opposite.
+    set_A = {1, 2, 3, 4}
+    set_B = {2, 8, 4, 16}
+
+    print(set_A - set_B)
+    print(set_A.difference(set_B))
+    print(set_B - set_A)
+    print(set_B.difference(set_A))
+
+    Output:
+    {1,3}
+    {1,3}
+    {16,8}
+    {16,8}
