@@ -92,3 +92,9 @@ set_B - set_A would do the opposite.
     {1,3}
     {16,8}
     {16,8}
+
+All the DSA can be converted into each other using constructors.
+list()
+set()
+dict()
+tuple()
