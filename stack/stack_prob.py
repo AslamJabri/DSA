@@ -21,7 +21,7 @@ def is_brac_bal(bal_string):
             s.push(brac)
         else:
             if s.is_empty():
-                is_bal = False
+                is_bal == False
                 break
             else:
                 top = s.pop()
@@ -36,5 +36,5 @@ def is_brac_bal(bal_string):
 
 
 
-print("String : (((({})))) Balanced or not?")
-print(is_brac_bal("h"))
+print("String : (((({}))) Balanced or not?")
+print(is_brac_bal("(((({))))"))

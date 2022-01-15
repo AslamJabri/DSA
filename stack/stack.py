@@ -1,7 +1,7 @@
 '''stack data structure'''
 
 #defining a class variable name stack
-class stack():
+class Stack():
     def __init__(self):
         #assiging it to the empty list
         self.items  = []
