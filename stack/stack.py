@@ -26,13 +26,13 @@ class stack():
     def get_stack(self):
         return self.items
 
-myStack = stack()
-myStack.push("A")
-myStack.push("B")
-myStack.push("C")
-# we are using push method to stack the items
-print(myStack.get_stack()) # ['A','B','C']
-myStack.pop()# runs the pop function and the c item is removed
-print(myStack.get_stack())  # ['A','B']
-print(myStack.is_empty())# this will tell weather the stack is empty or not in bool
-print(myStack._peek()) # this will give us the top element in the stack.
+#myStack = stack()
+#myStack.push("A")
+#myStack.push("B")
+#myStack.push("C")
+## we are using push method to stack the items
+#print(myStack.get_stack()) # ['A','B','C']
+#myStack.pop()# runs the pop function and the c item is removed
+#print(myStack.get_stack())  # ['A','B']
+#print(myStack.is_empty())# this will tell weather the stack is empty or not in bool
+#print(myStack._peek()) # this will give us the top element in the stack.
