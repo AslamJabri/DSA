@@ -36,3 +36,6 @@ class Stack():
 #print(myStack.get_stack())  # ['A','B']
 #print(myStack.is_empty())# this will tell weather the stack is empty or not in bool
 #print(myStack._peek()) # this will give us the top element in the stack.
+
+
+print(10 % 5)
