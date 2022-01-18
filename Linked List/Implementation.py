@@ -63,7 +63,7 @@ class LinkedList:
         new_node.next = prev_node.next
         prev_node.next = new_node
 
-#deleting the node
+#deleting the node by value
     def delete_node(self, key):
         cur_node = self.head
 
@@ -85,8 +85,51 @@ class LinkedList:
         prev.next = cur_node.next
         cur_node = None
 
+#deletion by position
+    def delete_node_at_pos(self, pos):
+        if self.head:
+            cur_node = self.head
 
+            if pos == 0:
+                self.head = cur_node.next
+                cur_node = None
+                return
 
+            prev = None
+            count = 0
+            while cur_node and count != pos:
+                prev = cur_node 
+                cur_node = cur_node.next
+                count += 1
+
+            if cur_node is None:
+                return 
+
+            prev.next = cur_node.next
+            cur_node = None
+#The delete_node_at_pos takes in pos as one of the input parameters.
+#First of all, we check on line 90 if the linked list is an empty list or not. We only proceed to line 91 if self.head is not None.
+#As we discussed before, we need to handle the case where pos will equal 0. If pos equals 0, it essentially means that we want to delete the head node.
+#On line 91, cur_node is initialized to the head node. Next, we check if pos is 0 or not. If it is, we update the head node to the next node of cur_node, set cur_node to None, and return from the method (lines 94-96). 
+# On the other hand, if we are deleting a node at a position other than the head node, we will proceed to line 98. 
+# We declare prev and set it to None and on line 99, we initialize count to 0. 
+# Now we traverse the linked list by updating prev and cur_node (lines 101-102) and increment count by 1 on line 103.
+# The while loop will terminate if cur_node becomes None or count becomes equal to pos which will imply that cur_node will be the node that we want to delete.
+#The code on lines 105-109 is precisely the same as in the delete_node class method.
+
+#Calculating Length of a Linked List
+    def len_iterative(self):
+        count = 0
+        cur_node =self.head
+        while cur_node:
+            count += 1
+            cur_node = cur_node.next
+        return count
+#recursion Implementation for calculating node
+    def len_recursive(self,node):
+        if node is None:
+            return 0
+        return 1+ self.len_recursive(node.next)
 
 llist = LinkedList()
 llist.append("A")
@@ -94,9 +137,10 @@ llist.append("B")
 llist.append("C")
 llist.append("D")
 llist.prepend("E")
-llist.insert_after_node(llist.head.next,"M")
+llist.insert_after_node(llist.head.next,"F")
 llist.delete_node("B")
 
 
-
+print(llist.len_iterative())
+print(llist.len_recursive(llist.head))
 llist.print_list()
