@@ -55,13 +55,36 @@ class LinkedList:
 # You can play around and verify the prepend method for yourself!
 
 #INSERT AFTER NODE
-    def insert_after_node(self,data,prev_node):
+    def insert_after_node(self,prev_node,data):
         if not prev_node:
             print("Previous node does not exist")
             return
         new_node = Node(data)
         new_node.next = prev_node.next
         prev_node.next = new_node
+
+#deleting the node
+    def delete_node(self, key):
+        cur_node = self.head
+
+        if cur_node and cur_node.next == key:
+            self.head = cur_node.next
+            cur_node = None
+            return
+#The class method delete_node takes key as an input parameter.  we’ll declare cur_node as self.head to have a starting point to traverse the linked list.
+#To handle the case of deleting the head, we’ll check if cur_node is not None and if the data in cur_node is equal to key on.
+#Note that cur_node is pointing to the head of the linked list at this point. If key matches cur_node.data, we’ll update the head of the linked list (self.head) to cur_node.next, i.e., the next node of the previous head node . 
+#Once we have updated the head of the linked list, we’ll set the node to be deleted (cur_node) to None  and return from the method.
+        prev = None
+        while cur_node and cur_node.data != key:
+            prev= cur_node
+            cur_node = cur_node.next
+        if cur_node is None:
+            return
+        
+        prev.next = cur_node.next
+        cur_node = None
+
 
 
 
@@ -71,5 +94,9 @@ llist.append("B")
 llist.append("C")
 llist.append("D")
 llist.prepend("E")
+llist.insert_after_node(llist.head.next,"M")
+llist.delete_node("B")
+
+
 
 llist.print_list()
